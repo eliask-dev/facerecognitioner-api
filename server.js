@@ -18,8 +18,8 @@ const db = knex({
 });
 
 const app = express();
-app.listen(3001, () => {
-    console.log("app is running on port 3001");
+app.listen(process.env.PORT || 3001, () => {
+    console.log(`app is running on port ${process.env.PORT}`);
 })
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
